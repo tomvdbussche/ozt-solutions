@@ -1,0 +1,25 @@
+---
+title: "Analyse op 1 variabele"
+output: html_document
+---
+
+## 2.11.4 Grafieken
+
+```{r}
+android_cpu <- read.csv("data/android_persistence_cpu.csv", sep = ";", dec = ",")
+attach(android_cpu)
+```
+
+### Histogram
+
+```{r}
+hist(android_cpu$Tijd, main = "Tijd", xlab = "CPU tijd")
+hist(android_cpu$Tijd, main = "Tijd", xlab = "CPU tijd", breaks = 2)
+```
+
+### Boxplot
+
+```{r}
+boxplot(android_cpu$Tijd, main = "Spreiding CPU Tijd", xlab = "Tijd (ms)")
+boxplot(android_cpu$Tijd~android_cpu$Datahoeveelheid, main = "Spreiding CPU Tijd <-> # Data", ylab = "Tijd (ms)")
+```
