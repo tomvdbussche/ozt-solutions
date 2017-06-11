@@ -1,6 +1,6 @@
 ---
 title: "Analyse op 1 variabele"
-output: html_document
+output: pdf_document
 ---
 
 ## 2.11.4 Grafieken
