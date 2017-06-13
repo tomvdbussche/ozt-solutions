@@ -4,7 +4,7 @@ m <- 300            # gemiddelde
 n <- 14             # steekproefgrootte
 sm <- mean(data)    # steekproefgemiddelde
 ss <- sd(data)      # steekproefstandaardafwijking
-ssd <- ss / sqrt(n) # steekproefstandaardfout
+ssm <- ss / sqrt(n) # steekproefstandaardfout
 a <- 0.05
 
 # H0 = P(m = 300)
@@ -13,7 +13,7 @@ a <- 0.05
 # Gebruik t-toets (n < 30)
 
 t <- qt(1 - a, df = n -1)
-g <- m + t * ss / sqrt(n)
+g <- m + t * ssm
 
 if (sm < g) {
   print("accept H0")
@@ -24,3 +24,4 @@ if (sm < g) {
 # Alternatief
 
 t.test(data, alternative = "greater", mu = m)
+

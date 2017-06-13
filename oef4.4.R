@@ -2,7 +2,7 @@ m <- 44           # populatiegemiddelde
 s <- 6.2          # standaardafwijking (populatie)
 n <- 72           # steekproefgrootte
 sm <- 46.2        # steekproefgemiddelde
-ssd <- s / sqrt(n) # steekproefstandaardfout (standaardafwijking van het steekproefgemiddelde)
+ssm <- s / sqrt(n) # steekproefstandaardfout (standaardafwijking van het steekproefgemiddelde / standard deviation of the sample mean)
 a <- 0.025        # significantieniveau
 
 # H0: m = 44
