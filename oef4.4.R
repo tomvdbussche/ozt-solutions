@@ -2,12 +2,16 @@ m <- 44           # populatiegemiddelde
 s <- 6.2          # standaardafwijking (populatie)
 n <- 72           # steekproefgrootte
 sm <- 46.2        # steekproefgemiddelde
-ss <- s / sqrt(n) # steekproef standaardafwijking
+ssd <- s / sqrt(n) # steekproefstandaardfout (standaardafwijking van het steekproefgemiddelde)
 a <- 0.025        # significantieniveau
+
+# H0: m = 44
+# H1: m > 44
 
 # 1. Kritieke grenswaarde
 
-g <- m + qnorm(1 - a) * ss 
+z <- qnorm(1 - a)
+g <- m + z * ssd
 
 if (sm < g) {
   print("accept H0")
@@ -17,7 +21,7 @@ if (sm < g) {
 
 # 2. Overschrijdingskans
 
-p <- 1 - pnorm(sm, m, ss)
+p <- 1 - pnorm(sm, m, ssd)
 
 if (p < a) {
   print("reject H0")
