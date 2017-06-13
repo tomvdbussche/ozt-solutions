@@ -1,0 +1,38 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[a4paper]{article}
+
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
+\usepackage{mathtools}
+
+\begin{document}
+
+\twocolumn
+
+\section{Formularium}
+
+\subsection{Mean}
+\input{eq-mean}
+
+\subsection{Variance}
+\input{eq-variance}
+
+\subsection{Standard Deviation}
+\input{eq-std-deviation}
+
+\subsection{Normal Distribution}
+\input{eq-normal-distribution}
+
+\subsection{Z Score}
+\input{eq-z-score}
+
+\section{Symbols}
+
+\begin{itemize}
+\item[$\mu$] gemiddelde (populatie)
+\item[$\Omega$] universum / uitkomstenruimte
+\end{itemize}
+
+\onecolumn
+
+\end{document}
