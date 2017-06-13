@@ -12,19 +12,65 @@
 \section{Formularium}
 
 \subsection{Mean}
-\input{eq-mean}
+
+\begin{equation}
+\mu = \frac{1}{n}\sum_{i=1}^n x_i
+\end{equation}
+
+\begin{itemize}
+\item[$\mu$] population mean
+\item[$\bar{x}$] sample mean
+\end{itemize}
 
 \subsection{Variance}
-\input{eq-variance}
+
+\begin{equation}
+\sigma^2 =\frac 1N \sum_{i=1}^N (x_i - \mu)^2
+\end{equation}
 
 \subsection{Standard Deviation}
-\input{eq-std-deviation}
+\begin{equation}
+\sigma = \sqrt{\sigma^2}
+\end{equation}
 
-\subsection{Normal Distribution}
-\input{eq-normal-distribution}
+\begin{equation}
+\sigma_{\bar{x}}^2 = \frac{\sigma_{x}^2}{n}
+\end{equation}
 
-\subsection{Z Score}
-\input{eq-z-score}
+\begin{align}
+\sigma_{\bar{x}}  &= \frac{\sigma}{\sqrt{n}}  & \\
+                  &= \frac{s}{\sqrt{n}}       &\text{if $n > 30$}
+\end{align}
+
+\begin{itemize}
+\item[$\sigma$] population standard deviation
+\item[$s$] sample standard deviation
+\end{itemize}
+
+
+% \subsection{Normal Distribution}
+% 
+% \begin{equation}
+% f(x) = \frac{1}{\sigma\sqrt{2\pi} }\,e^{-\frac 12
+% \left(\frac{x-\mu}{\sigma}\right)^2 }
+% \label{eq:NormalDistribution}
+% \end{equation}
+
+\subsection{$z$-score}
+
+\begin{equation}
+z = \frac{x- \mu}{\sigma}
+\end{equation}
+
+\begin{equation}
+z = \frac{\bar{x} - \mu_{\bar{x}}}{\sigma_{\bar{x}}}
+\end{equation}
+
+\subsection{Kritieke grenswaarde}
+
+\begin{equation}
+g = \mu \pm z \times \sigma_{\bar{x}}
+\end{equation}
 
 \section{Symbols}
 
@@ -32,6 +78,15 @@
 \item[$\mu$] gemiddelde (populatie)
 \item[$\Omega$] universum / uitkomstenruimte
 \end{itemize}
+
+\section{Significance testing}
+
+\begin{tabular}{l|c|c}
+& \multicolumn{2}{c}{$H_{0}$ (reality)} \\
+& true & false \\ \hline
+accept & OK & Type II error \\
+reject & Type I error & OK \\
+\end{tabular}
 
 \onecolumn
 
