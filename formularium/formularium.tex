@@ -81,7 +81,7 @@ g = \mu \pm z \times \sigma_{\bar{x}}
 \subsection{Cramer's V}
 
 \begin{equation}
-V = \sqrt{\frac{\chi^2}{n(k - 1)}}
+V = \sqrt{\frac{\chi^2}{n(min(r - 1, c - 1)}}
 \end{equation}
 
 \begin{tabular}{c|c}
@@ -93,6 +93,14 @@ $0.50$ & sterk \\ \hline
 $0.75$ & zeer sterk \\ \hline
 $1$ & volledig \\
 \end{tabular}
+
+\subsection{Moving average}
+
+\begin{equation}
+\widehat{b} = \sum_{i=k}^t \frac{x_i}{m}
+\end{equation}
+
+\[k = t - m + 1\]
 
 \section{Symbols}
 
