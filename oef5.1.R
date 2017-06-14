@@ -25,7 +25,10 @@ X2 <- sum((t - e)^2 / e)
 
 # CramersV
 
-V <- sqrt(X2 / n * (2 - 1))
+n <- margin.table(t)       # totaal aantal wijnen
+k <- min(nrow(t), ncol(t)) # aantal rijen / kollommen (laagste)
+
+V <- sqrt(X2 / (n * (k - 1)))
 
 writeLines(
   c(
