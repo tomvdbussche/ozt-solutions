@@ -17,36 +17,19 @@
 \mu = \frac{1}{n}\sum_{i=1}^n x_i
 \end{equation}
 
-\begin{itemize}
-\item[$\mu$] population mean
-\item[$\bar{x}$] sample mean
-\end{itemize}
-
 \subsection{Variance}
 
-\begin{equation}
-\sigma^2 =\frac 1N \sum_{i=1}^N (x_i - \mu)^2
-\end{equation}
+\begin{align}
+\sigma^2 &=\frac 1N \sum_{i=1}^N (x_i - \mu)^2 \\
+\sigma_{\bar{x}}^2 &= \frac{\sigma_{x}^2}{n} 
+\end{align}
 
 \subsection{Standard Deviation}
-\begin{equation}
-\sigma = \sqrt{\sigma^2}
-\end{equation}
-
-\begin{equation}
-\sigma_{\bar{x}}^2 = \frac{\sigma_{x}^2}{n}
-\end{equation}
-
 \begin{align}
+\sigma &= \sqrt{\sigma^2} \\
 \sigma_{\bar{x}}  &= \frac{\sigma}{\sqrt{n}}  & \\
                   &= \frac{s}{\sqrt{n}}       &\text{if $n > 30$}
 \end{align}
-
-\begin{itemize}
-\item[$\sigma$] population standard deviation
-\item[$s$] sample standard deviation
-\end{itemize}
-
 
 % \subsection{Normal Distribution}
 % 
@@ -94,6 +77,12 @@ $0.75$ & zeer sterk \\ \hline
 $1$ & volledig \\
 \end{tabular}
 
+\subsection{Covariance}
+
+\begin{equation}
+Cov(X,Y) = \frac{\sum_i^n (x_i - \bar{x})(y_i - \bar{y})}{n}
+\end{equation}
+
 \subsection{Moving average}
 
 \begin{equation}
@@ -105,8 +94,11 @@ $1$ & volledig \\
 \section{Symbols}
 
 \begin{itemize}
-\item[$\mu$] gemiddelde (populatie)
-\item[$\Omega$] universum / uitkomstenruimte
+\item[$\mu$] population mean
+\item[$\bar{x}$] sample mean
+\item[$\sigma$] population standard deviation
+\item[$s$] sample standard deviation
+\item[$\sigma_{\bar{x}}$] standard deviation of the sample mean
 \end{itemize}
 
 \section{Significance testing}
