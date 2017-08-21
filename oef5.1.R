@@ -17,7 +17,7 @@ e <- as.array(
   margin.table(t, 1) %*% t(
     as.array(margin.table(t, 2))
   ) / margin.table(t)
-) 
+)
 
 # X2
 
@@ -37,7 +37,9 @@ writeLines(
   )
 )
 
+cv.test(t)
+
 # Alternatief
-library(lsr)
-V <- cramersV(t)
-print(sprintf("V  = %s", V))
+# library(lsr)
+# V <- cramersV(t)
+# print(sprintf("V  = %s", V))
