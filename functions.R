@@ -1,3 +1,12 @@
+#' Initializes the environment
+env.init <- function() {
+  source("packages.R") # Install missing packages
+  # Try to load all scripts
+  for (f in list.files(pattern="*.R$")) {
+    source(f)
+  }
+}
+
 #' Bereken standaardfout
 #' 
 #' @param sd standaardafwijking
