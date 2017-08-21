@@ -1,7 +1,3 @@
-# For documentation generation, install the following
-# dnf install libxml2-devel libxslt-devel
-# install.packages("roxygen2")
-
 #' Bereken standaardfout
 #' 
 #' @param sd standaardafwijking
@@ -44,14 +40,6 @@ g.calc <- function(m, score, s, n, se = se.calc(s, n)) {
   return(m - score * se)
 }
 
-### Bereken overschrijdingskans
-# x   = steekproefgemiddelde
-# m   = populatiegemiddelde
-# s   = standaardafwijking
-# n   = steekproefgrootte
-# se  = standaardsteekproeffout
-
-
 #' Bereken overschrijdingskans
 #'
 #' @param x steekproefgemiddelde
@@ -64,9 +52,6 @@ g.calc <- function(m, score, s, n, se = se.calc(s, n)) {
 p.calc <- function(x, m, s, n, se = se.calc(s, n)) {
   return(pnorm(x, m, se))
 }
-
-### Test hypothese
-# kijkt of hypothese verworpen moet worden en print het resultaat
 
 #' Test hypothese
 #'
