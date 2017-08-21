@@ -1,17 +1,15 @@
 Cats <- read.csv("data/Cats.csv")
 
-# View(Cats)
+x <- Cats$Bwt
+y <- Cats$Hwt
 
-Bwt <- Cats$Bwt
-Hwt <- Cats$Hwt
+regr <- lm(y ~ x) # Regressierechte
 
-r <- lm(Hwt ~ Bwt) # Regressierechte
+plot(x, y)
+abline(regr, col="red")
 
-plot(x = Bwt, y= Hwt)
-abline(r)
-
-r <- cor(Hwt, Bwt) # Pearson's Correlatiecoefficient
+pearson <- cor(y, x) # Pearson's Correlatiecoefficient
 
 # +1 = Stijgend gecorreleerd verband
 # -1 = Dalend gecorreleerd verband
-# 0  = Nit gecorreleerde variabelen
+# 0  = Niet gecorreleerde variabelen
