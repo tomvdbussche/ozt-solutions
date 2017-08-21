@@ -63,3 +63,76 @@ h.test <- function(reject) {
     print("accept H0")
   }
 }
+
+#' Bereken puntschatter
+#' 
+#' @param t kruistabel
+#' 
+#' @return e
+chisq.e <- function(t) {
+  return(
+    margin.table(t, 1) %*% t(
+      as.array(margin.table(t, 2))
+    ) / margin.table(t)
+  )
+}
+
+#' Bereken chi-kwadraat
+#' 
+#' @param t kruistabel
+#' 
+#' @return chi-kwadraat
+chisq.calc <- function(t, e = chisq.e(t)) {
+  return(
+    sum((t - e)^2 / e)
+  )
+}
+
+#' Bereken aantal waarnemingen
+#' 
+#' @param t kruistabel
+cross.n <- function(t) {
+  return(
+    margin.table(t)
+  )
+}
+
+#' Bereken kleinste waarde aantal rijen of kolommen
+#' 
+#' @param t kruistabel
+cross.k <- function(t) {
+  return(
+    min(nrow(t), ncol(t))
+  )
+}
+
+#' Bereken Cramers' V
+#' 
+#' @param t kruistabel
+#' @param x2 chi-kwadraat
+#' @param n aantal waarnemingen
+#' @param k kleinste waarde van aantal rijen of kolommen
+cv.calc <- function(t, x2 = chisq.calc(t), n = cross.n(t), k = cross.k(t)) {
+  return(
+    sqrt(x2 / (n * (k - 1)))
+  )
+}
+
+#' Toont de samenhang tussen variabelen in een kruistabel
+#' 
+#' @param t kruistabel
+cv.test <- function(t, cv = cv.calc(t)) {
+  if (cv == 0) {
+    print("Geen samenhang")
+  } else if (cv < 0.175) {
+    print("Zwakke samenhang")
+  } else if (cv < 0.375) {
+    print("Redelijk sterke samenhang")
+  } else if (cv < 0.625) {
+    print("Sterke samenhang")
+  } else if (cv < 0.875) {
+    print("Zeer sterke samenhang")
+  } else {
+    print("volledige samenhang")
+  }
+}
