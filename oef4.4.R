@@ -11,7 +11,7 @@ a <- 0.025        # significantieniveau
 # 1. Kritieke grenswaarde
 
 z <- qnorm(1 - a)
-g <- m + z * ssd
+g <- m + z * ssm
 
 if (sm < g) {
   print("accept H0")
@@ -21,7 +21,7 @@ if (sm < g) {
 
 # 2. Overschrijdingskans
 
-p <- 1 - pnorm(sm, m, ssd)
+p <- 1 - pnorm(sm, m, ssm)
 
 if (p < a) {
   print("reject H0")
