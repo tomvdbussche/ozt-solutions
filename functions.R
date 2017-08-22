@@ -154,3 +154,32 @@ cv.test <- function(t, cv = cv.calc(t)) {
     print("volledige samenhang")
   }
 }
+
+#' Plot lineair verband en teken regressierechte
+#' 
+#' @param x x
+#' @param y y
+#' @param regr lineaire regressierechte
+#' @param main titel
+#' @param xlab label x
+#' @param ylab label y
+#' @param regr
+regr.plot <- function(x, y, regr = lm(y ~ x), main = 'y ~ x', xlab = 'x', ylab = 'y') {
+  plot(x, y, main, xlab, ylab)
+  abline(regr, col = "red")
+}
+
+#' Test verband tussen 2 variabelen
+#' 
+#' @param x
+#' @param y
+#' @param r correlatiecoefficient
+pearson.test <- function(x, y, r = cor(x, y)) {
+  if (r > 0) {
+    print("Positief lineair verband")
+  } else if (r < 0) {
+    print("Negatief lineair verband")
+  } else {
+    print("Geen lineaire samenhang")
+  }
+}
