@@ -36,6 +36,15 @@ t.calc <- function(a, n) {
   return (qt(a, df = n - 1))
 }
 
+#' Log resultaat van t.test
+#' 
+#' @param t resultaat t.test
+#' @param a significantieniveau
+t.log <- function(t, a) {
+  print(t)
+  h.test(t$p.value < a)
+}
+
 #' Bereken kritieke grenswaarde
 #' 
 #' @param m populatiegemiddelde
